@@ -47,7 +47,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: navy;
+  background-color: #072448;
   height: 50%;
 }
 
@@ -64,28 +64,37 @@
 
 .button {
   color: white;
-  background-color: #ff8c00;
+  background-color: #0BA5BE;
   border: none;
   padding: 12px 20px;
   font-size: 20px;
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  box-shadow: 0px 3px 0px #bf5e00;
+  box-shadow: 0px 3px 0px #087889;
 }
 
 .button:active {
-  background-color: #ff6f00;
-  box-shadow: 0px 1px 0px #bf5e00;
+  /* color:#CFCBC8; */
+  background-color: #CFCBC8;
+  /* box-shadow: 0px 1px 0px #b04337; */
 }
 
+/* .button:hover {
+  background-color: #4da6ff;
+} */
+
 .lower {
-  flex-grow: 1;
-  background-color: white;
+  color: #CFCBC8;
+  background-color: #CFCBC8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* for example purposes only */
 }
 
 .spinner {
-  margin: 40px auto;
   border-radius: 50%;
   border-top: 8px solid rgba(0, 0, 0, 0.2);
   border-right: 8px solid rgba(0, 0, 0, 0.2);
@@ -105,35 +114,3 @@
     transform: rotate(360deg);
   }
 }
-
-.summary-tile {
-  background-color: #f0f0f0;
-  border: 1px solid #d0d0d0;
-  padding: 12px;
-  margin-bottom: 12px;
-}
-
-.stakeholders-tile {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.stakeholders-tile > div {
-  background-color: #f0f0f0;
-  border: 1px solid #d0d0d0;
-  padding: 12px;
-  margin-right: 12px;
-  margin-bottom: 12px;
-}
-
-.tile-title {
-  color: #333;
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 12px;
-}
-
-.tile-text {
-  margin-bottom: 12px;
-}
-

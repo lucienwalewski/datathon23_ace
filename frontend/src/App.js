@@ -38,7 +38,7 @@ function App() {
   return (
     <div className="container">
       <div className="upper">
-        <input
+      <input
           type="text"
           className="input"
           value={inputValue}
@@ -46,8 +46,13 @@ function App() {
           placeholder="Enter text here..."
         />
         <button className="button" onClick={handleButtonClick}>
-          Send
+          Evaluate
         </button>
+        {/* <div class="header">
+          <h1>Known Impact</h1>
+        </div>
+        <div class="content">
+        </div> */}
       </div>
       <div className="lower">
         {loading && <div className="spinner"></div>}
