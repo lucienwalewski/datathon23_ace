@@ -2,7 +2,7 @@
 
 ## Description
 
-Certain minority stakeholders are often inadvertently overlooked when implemented (government) policies. We provide a web application that takes in a policy in the format of a string, identifies the key stakeholders that may be marginalised and provides a short summary on each of them.
+Certain minority stakeholders are often inadvertently overlooked when certain policies are implemented. We provide a web application that takes in a policy in the format of a string, identifies the key stakeholders that may be marginalised and provides a short summary on each of them.
 
 ## Setup
 
