@@ -22,9 +22,8 @@ function App() {
     };
     console.log("Request options: " + requestOptions);
     fetch("http://localhost:8000/generate_response", requestOptions) 
-      .then((response) => {
-        return response.json();
-      })
+      .then((response) => response.json())
+      // .then((response) => response.json())
       .then((data) => {
         setResponse(data);
         setLoading(false);
@@ -37,6 +36,9 @@ function App() {
 
   return (
     <div className="container">
+      <div className="logo">
+        ImpactTracker
+      </div>
       <div className="upper">
       <input
           type="text"
@@ -55,7 +57,7 @@ function App() {
         </div> */}
       </div>
       <div className="lower">
-        {loading && <div className="spinner"></div>}
+        {loading && <div className="box"> <div className="spinner"></div> </div>}
         {response && (
           <div style={{ '--num-tiles': response.length }}>
             <TileContainer data={response} />

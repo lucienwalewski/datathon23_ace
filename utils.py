@@ -3,7 +3,7 @@ import json
 import numpy as np
 
 ENDPOINT_URL = "https://gzomty3pre.execute-api.us-east-1.amazonaws.com/dev/llm-inference"
-
+STABLE_DIFFUSION_ENDPOINT_URL = "https://4idt5x56dd.execute-api.us-east-1.amazonaws.com/Dev/stable-diffusion-inference"
 
 EXAMPLE_PAYLOAD = {
     "data": {
@@ -30,8 +30,20 @@ def process_request(payload):
         print(response.text)
         return None
 
+def get_picture(payload):
+    response = requests.post(
+        STABLE_DIFFUSION_ENDPOINT_URL,
+        data=json.dumps(payload),
+        headers={"Content-Type": "application/json"})
+    if response.status_code == 200:
+        print("Endpoint queried successfully.")
+        return response.json()
+    else:
+        print(f"Error querying endpoint. Status code: {response.status_code}")
+        print(response.text)
+        return None
 
-def get_stakeholders_sdg(policy: str) -> str:
+def get_stakeholders_sdg(policy: str):
 
     sdgs = ['Eradicate poverty', 'Eradicate hunger', 'Improve health', 'Improve education', 'Improve genders equality', 'Water sanitation',
             'Make energy clean and affordable', 'Improve work conditions and support economic growth',
@@ -52,13 +64,11 @@ def get_stakeholders_sdg(policy: str) -> str:
     if 'and' in answer_sh[0]:
         answer_sh = answer_sh[0].split('and')
     stakeholders = []
-    print(answer_sh)
     for elm in answer_sh:
         if ',' in elm:
             stakeholders += elm.strip().strip(',').split(',')
         else:
             stakeholders += [elm.strip()]
-    print(stakeholders)
     res = []
     for stakeholder in stakeholders:
         payload_imp = {
@@ -119,12 +129,14 @@ def get_stakeholders_sdg(policy: str) -> str:
         res.append({
             "Name": stakeholder,
             "Impact": answer_imp[0],
-            "Positive impact": positive,
-            "Negative impacat": negative,
+            "PositiveImpact": positive,
+            "NegativeImpact": negative,
             "Overall": [len(positive), len(neutral), len(negative)]
         })
+    for stakeholder in res:
+        print(stakeholder)
 
-    return str(res)
+    return res
 
 
 def get_stakeholders(policy: str) -> str:

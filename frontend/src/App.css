@@ -40,7 +40,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
+  background-color: #CFCBC8;
 }
 
 .upper {
@@ -48,7 +49,7 @@
   justify-content: center;
   align-items: center;
   background-color: #072448;
-  height: 50%;
+  height: 200px;
 }
 
 .input {
@@ -89,9 +90,28 @@
   background-color: #CFCBC8;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:  flex-start;
   align-items: center;
-  height: 300px; /* for example purposes only */
+  min-height: 80vh;
+  padding-top: 10px;
+}
+
+.logo {
+  padding: 50px;
+  color: white;
+  background-color: #072448;
+  padding-top: 80px;
+  padding-bottom: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-style: italic;
+  font-size: 60px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+}
+
+.box {
+  padding-top: 50px;
 }
 
 .spinner {
